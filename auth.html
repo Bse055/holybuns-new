@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Signup - Holy Buns</title>
+ <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="/holybunslogo.png" alt="Holy Buns Logo" class="logo">
+    <nav>
+      <a href="homepage.html#home">Home</a>
+      <a href="homepage.html#menu">Menu</a>
+      <a href="homepage.html#about">About</a>
+      <a href="homepage.html#contact">Contact</a>
+      <span id="auth-status">Login / Signup</span>
+      <a href="javascript:void(0)" class="cart-link">🛒<span id="nav-cart-count" class="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <!-- Auth Section -->
+  <section class="auth-container">
+    <div class="auth-box">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="showLogin()">Login</button>
+        <button class="auth-tab" onclick="showSignup()">Sign Up</button>
+      </div>
+      
+    <!-- Login Form -->
+<form class="auth-form active" id="loginForm" style="display:block">
+  <h2 class="auth-heading">Welcome Back!</h2>
+  <input type="email" class="auth-input" placeholder="Email Address" required>
+  <input type="password" class="auth-input" placeholder="Password" required>
+  <button type="submit" class="auth-btn">Login to Holy Buns</button>
+  <div class="auth-switch">
+    Don’t have an account? <a href="#" onclick="showSignup()">Sign up here</a>
+  </div>
+</form>
+
+      
+      <!-- Signup Form -->
+      <form class="auth-form" id="signupForm">
+        <h2 class="auth-heading">Join Holy Buns!</h2>
+        <input type="text" class="auth-input" placeholder="Full Name" required>
+        <input type="email" class="auth-input" placeholder="Email Address" required>
+        <input type="tel" class="auth-input" placeholder="Phone Number" required>
+        <input type="password" class="auth-input" placeholder="Password" required>
+        <h3 class="address-heading">Delivery Address</h3>
+        <input type="text" class="auth-input" placeholder="Street Address" required>
+        <input type="text" class="auth-input" placeholder="Area/Block" required>
+        <input type="text" class="auth-input" placeholder="City" required>
+        <button type="submit" class="auth-btn">Create Account</button>
+        <div class="auth-switch">
+          Already have an account? <a href="#" onclick="showLogin()">Login here</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> 124 NISHTAR BLOCK, Violet Block, Bahria Town, Lahore, 53720</p>
+    <p><strong>Phone:</strong> <a href="tel:03393001110">0339 3001110</a></p>
+    <p><strong>Hours:</strong> Open ⋅ Closes 3 am</p>
+    <div style="margin-top:20px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13611.088652849823!2d74.193!3d31.354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904b6e289e4d9%3A0x123456789abcdef!2s124%20Nishtar%20Block%2C%20Bahria%20Town%2C%20Lahore!5e0!3m2!1sen!2s!4v1695471234567"
+        width="100%"
+        height="300"
+        style="border:0; border-radius:10px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="newsletter">
+      <h3>Subscribe to our Newsletter</h3>
+      <p>Get the latest updates, offers & heavenly deals straight to your inbox!</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p>© 2025 Holy Buns. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holy Buns - Burgers & Fries</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+  
+    <img src="/holybunslogo.png" alt="Holy Buns Logo" class="logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="auth.html" id="auth-link">Login / Signup</a>
+        <a href="javascript:void(0)" class="cart-link" onclick="openCart()">🛒<span id="nav-cart-count" class="cart-count">0</span></a>    </nav>
+  </header>
+ <!-- Cart Overlay -->
+<div class="cart-overlay" onclick="closeCart()"></div>
+
+<!-- Cart Side Panel -->
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="close-cart" onclick="closeCart()">&times;</button>
+  </div>
+  
+  <div class="cart-items" id="cartItemsContainer">
+    <!-- Cart items will be dynamically inserted here -->
+  </div>
+  
+  <div class="cart-summary" id="cartSummary">
+    <!-- Cart summary will be dynamically inserted here -->
+  </div>
+</div>
+  <section class="hero" id="home">
+        <img src="/logo.png" alt="Holy Buns Logo" class="logo">
+
+    <h1>Straight Out’a Heaven Burgers</h1>
+    <p>Premium Beef & Chicken Burgers | Fries | Drinks</p>
+  </section>
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>🍔 Crafted with Passion</h3>
+      <p>
+        Every burger is built with love, fresh ingredients, and a passion for flavor. 
+        From juicy smashed beef patties to crispy fried chicken, each bite is heaven.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>🍟 More than Just Food</h3>
+      <p>
+        At Holy Buns, we don’t just serve meals — we create experiences. 
+        Whether it’s a late-night craving or a casual hangout, we’ve got you covered.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>🔥 Loaded with Flavor</h3>
+      <p>
+        Our loaded fries, premium add-ons, and heavenly sides are designed 
+        to make every order unforgettable and keep you coming back for more.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>✨ Straight Out’a Heaven</h3>
+      <p>
+        Friendly service, cozy vibes, and a menu that truly delivers. 
+        Holy Buns is where every bite is a blessing.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <section class="menu" id="menu">
+    <h2>Our Menu</h2>
+
+    <!-- Premium Beef Burgers -->
+    <div class="menu-category">
+      <h3>Premium Beef Burgers</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><h4>Saint Stack</h4><p>Smashed beef, mozzarella sticks, bologna & caramelised onions</p><span class="price">Rs. 920</span><span class="add-to-cart" data-name="Saint Stack" data-price="920">🛒</span></div>
+        <div class="menu-item"><h4>The Confession</h4><p>Smashed beef with Swiss cheese & caramelised mushrooms</p><span class="price">Rs. 840</span><span class="add-to-cart" data-name="The Confession" data-price="840">🛒</span></div>
+        <div class="menu-item"><h4>Holy Moly!</h4><p>Smashed beef with cheese, jalapeños & lettuce</p><span class="price">Rs. 840</span><span class="add-to-cart" data-name="Holy Moly!" data-price="840">🛒</span></div>
+        <div class="menu-item"><h4>The Ascension</h4><p>Smashed beef with sundried tomatoes, rocket leaves & pickled onions</p><span class="price">Rs. 890</span><span class="add-to-cart" data-name="The Ascension" data-price="890">🛒</span></div>
+      </div>
+    </div>
+
+    <!-- Classic Beef Burgers -->
+    <div class="menu-category">
+      <h3>Classic Beef Burgers</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><h4>Divine & Mine</h4><p>Smashed beef with cheese & dill pickles</p><span class="price">Rs. 740</span><span class="add-to-cart" data-name="Divine & Mine" data-price="740">🛒</span></div>
+        <div class="menu-item"><h4>Blessed Bun</h4><p>Smashed beef with cheese, raw tomato, raw onion & lettuce</p><span class="price">Rs. 780</span><span class="add-to-cart" data-name="Blessed Bun" data-price="780">🛒</span></div>
+      </div>
+    </div>
+
+    <!-- Chicken Burgers -->
+    <div class="menu-category">
+      <h3>Chicken Burgers</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><h4>Chicky TAA!</h4><p>Spicy crispy chicken thigh with cheese, lettuce & pickles</p><span class="price">Rs. 750</span><span class="add-to-cart" data-name="Chicky TAA!" data-price="750">🛒</span></div>
+        <div class="menu-item"><h4>Chicky BAA!</h4><p>Spicy & crispy chicken breast fillet with cheese, lettuce & pickles</p><span class="price">Rs. 750</span><span class="add-to-cart" data-name="Chicky BAA!" data-price="750">🛒</span></div>
+        <div class="menu-item"><h4>Chicky PAA!</h4><p>Classic crispy coated chicken patty with cheese, lettuce & fries</p><span class="price">Rs. 550</span><span class="add-to-cart" data-name="Chicky PAA!" data-price="550">🛒</span></div>
+      </div>
+    </div>
+
+    <!-- Add Ons -->
+    <div class="menu-category">
+      <h3>Add Ons</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><h4>2x Thick!</h4><span class="price">Rs. 320</span><span class="add-to-cart" data-name="2x Thick!" data-price="320">🛒</span></div>
+        <div class="menu-item"><h4>3x Thick!</h4><span class="price">Rs. 500</span><span class="add-to-cart" data-name="3x Thick!" data-price="500">🛒</span></div>
+        <div class="menu-item"><h4>Mozzarella Sticks</h4><span class="price">Rs. 330</span><span class="add-to-cart" data-name="Mozzarella Sticks" data-price="330">🛒</span></div>
+      </div>
+    </div>
+
+    <!-- Make it a Meal -->
+    <div class="menu-category">
+      <h3>Make it a Meal</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><h4>Drink + Fries</h4><p>Crispy crinkle cut fries with a drink</p><span class="price">Rs. 400</span><span class="add-to-cart" data-name="Drink + Fries" data-price="400">🛒</span></div>
+        <div class="menu-item"><h4>Soft Soda Drink Regular</h4><span class="price">Rs. 160</span><span class="add-to-cart" data-name="Soft Soda Drink Regular" data-price="160">🛒</span></div>
+        <div class="menu-item"><h4>Soft Soda Drink Small</h4><span class="price">Rs. 90</span><span class="add-to-cart" data-name="Soft Soda Drink Small" data-price="90">🛒</span></div>
+      </div>
+    </div>
+
+    <!-- Loaded Fries -->
+    <div class="menu-category">
+      <h3>Loaded Fries</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><h4>Double Beef Bomb!</h4><p>Double smashed beef, cheese, onion relish, pickles & sauce</p><span class="price">Rs. 1070</span><span class="add-to-cart" data-name="Double Beef Bomb!" data-price="1070">🛒</span></div>
+        <div class="menu-item"><h4>Double Chicken Blast</h4><p>Double chicken fillet, cheese, onion relish, pickles & sauce</p><span class="price">Rs. 1040</span><span class="add-to-cart" data-name="Double Chicken Blast" data-price="1040">🛒</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+<section class="reviews" id="reviews">
+  <h2>Customer Reviews</h2>
+  <div class="review-container">
+    <div class="review">
+      <p class="review-text">"Best burgers in town! Juicy, fresh, and packed with flavor. Holy Buns never disappoints."</p>
+      <p class="review-author">- Ayesha K.</p>
+    </div>
+    <div class="review">
+      <p class="review-text">"The loaded fries are out of this world! Perfect combo with their premium beef burgers."</p>
+      <p class="review-author">- Hamza R.</p>
+    </div>
+    <div class="review">
+      <p class="review-text">"Excellent service and heavenly taste. The hype is real — straight out’a heaven indeed!"</p>
+      <p class="review-author">- Sana M.</p>
+    </div>
+  </div>
+</section>
+
+ 
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Address:</strong> 124 NISHTAR BLOCK, Violet Block, Bahria Town, Lahore, 53720</p>
+  <p><strong>Phone:</strong> <a href="tel:03393001110">0339 3001110</a></p>
+  <p><strong>Hours:</strong> Open ⋅ Closes 3 am</p>
+
+  <!-- Google Maps Embed -->
+  <div style="margin-top:20px;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13611.088652849823!2d74.193!3d31.354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904b6e289e4d9%3A0x123456789abcdef!2s124%20Nishtar%20Block%2C%20Bahria%20Town%2C%20Lahore!5e0!3m2!1sen!2s!4v1695471234567"
+      width="100%"
+      height="300"
+      style="border:0; border-radius:10px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+ 
+
+<footer>
+
+  <div class="newsletter">
+    <h3>Subscribe to our Newsletter</h3>
+    <p>Get the latest updates, offers & heavenly deals straight to your inbox!</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+      <p>© 2025 Holy Buns. All rights reserved.</p>
+
+  </div>
+</footer>
+
+<!-- Modal -->
+<div id="itemModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="" style="width:100%;border-radius:10px;margin-bottom:15px;">
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+    <p><strong id="modalPrice"></strong></p>
+
+    <div class="qty">
+      <button onclick="decreaseQty()">-</button>
+      <span id="quantity">1</span>
+      <button onclick="increaseQty()">+</button>
+    </div>
+
+    <button class="add-btn">Add to Cart</button>
+  </div>
+</div>
+
+
+<div id="toast"></div>
+  <script src="script.js"></script>
+
+
+</div>
+</body>
+</html>
